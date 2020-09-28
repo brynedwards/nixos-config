@@ -1,0 +1,4 @@
+hsetroot -full /etc/nixos/modules/gui/wallpaper.png &
+setxkbmap -option ctrl:swapcaps ie
+xrdb -merge $HOME/.Xresources
+exec i3

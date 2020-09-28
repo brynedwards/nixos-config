@@ -1,0 +1,79 @@
+@define-color fg_primary #bf7838;
+@define-color fg_primary_focused #ffa04a;
+@define-color fg_secondary #22bf79;
+@define-color fg_secondary_focused #2dffa2;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, sans-serif, 'Font Awesome 5 Free Solid';
+    font-size: 9pt;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.7);
+    color: @fg_primary_focused;
+}
+
+window.DP-3 * {
+  font-size: 9pt;
+}
+
+#workspaces {
+    margin-right: 0.5em;
+}
+
+#workspaces button {
+    padding: 0 0.25em;
+    background: transparent;
+    color: @fg_secondary;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.current_output {
+    color: @fg_primary;
+}
+
+#workspaces button.focused {
+    color: @fg_secondary_focused;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-top: 2px solid @fg_secondary_focused;
+}
+
+#workspaces button.current_output.focused {
+    color: @fg_primary_focused;
+    border-top: 2px solid @fg_primary_focused;
+}
+
+#mode {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-top: 3px solid @fg_primary_focused;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+}
+
+#cpu, #memory, #temperature, #network, #mpd, #pulseaudio, #clock {
+    padding: 0;
+    margin: 0 1em;
+}
+
+#network {
+  min-width: 150px;
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio.muted {
+  color: #aaa;
+}
+
+#mpd.disconnected {
+    color: #a00;
+}

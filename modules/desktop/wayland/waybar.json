@@ -1,0 +1,82 @@
+[
+  {
+    "height": 30,
+    "layer": "bottom",
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+      "sway/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "temperature",
+      "network",
+      "mpd",
+      "pulseaudio",
+      "clock"
+    ],
+    "output": [
+      "DP-2"
+    ],
+    "position": "top",
+    "sway/workspaces": {
+      "all-outputs": true
+    },
+    "clock": {
+      "format": " {:%A %d %B, %H:%M}"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "interval": 1
+    },
+    "memory": {
+      "format": " {used:0.1f} GB"
+    },
+    "network": {
+      "format": " ⬇{bandwidthDownBits} ⬆{bandwidthUpBits}",
+      "interval": 1
+    },
+    "temperature": {
+      "format": "{icon} {temperatureC} °C",
+      "format-icons": [
+        "",
+        ""
+      ]
+    },
+    "mpd": {
+      "format-disconnected": " ",
+      "state-icons": {
+        "playing": "",
+        "paused": ""
+      }
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-muted": " {volume}%",
+      "format-icons": {
+        "default": [
+          "",
+          ""
+        ],
+        "headphones": ""
+      }
+    }
+  }, {
+    "height": 20,
+    "layer": "bottom",
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+      "sway/window"
+    ],
+    "output": [
+      "DP-3"
+    ],
+    "position": "top",
+    "sway/workspaces": {
+      "all-outputs": true
+    }
+  }
+]
