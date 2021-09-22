@@ -1,0 +1,6 @@
+#!/run/current-system/sw/bin/python
+
+from os import getenv
+from shutil import copyfile
+
+copyfile(getenv("QUTE_HTML"), "test.html")

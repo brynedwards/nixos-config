@@ -1,0 +1,47 @@
+# Preferences
+# ‾‾‾‾‾‾‾‾‾‾‾
+
+set global indentwidth 2
+set global tabstop 2
+set global grepcmd 'rg --column'
+declare-option -hidden str shell zsh
+declare-option -hidden str file_manager lf
+
+face global Whitespace 'rgb:4b5262'
+
+addhl global/ number-lines -hlcursor -relative
+addhl global/ show-matching
+addhl global/ show-whitespaces -lf ' ' -spc ' ' -nbsp ' '
+
+evaluate-commands %sh{kak-lsp --kakoune -s $kak_session}
+
+map global normal D %{"_d""}
+map global goto p <esc><c-o>
+map global goto n <esc><tab>
+
+map global normal q %{: delete-buffer<ret>}
+map global normal Q %{: delete-buffer!<ret>}
+map global normal <c-n> %{: new<ret>}
+map global normal <c-o> %{: connect terminal-float :fzf-files<ret>}
+map global normal <c-q> %{: quit<ret>}
+map global normal <c-r> %{:<ret>}
+map global normal <c-v> %{!wl-paste -n<ret>}
+map global normal <c-a-s> <c-s>
+map global normal <c-s> %{: write<ret>}
+map global normal <tab> %{: connect terminal-float :fzf-buffers<ret>}
+
+map global user l ': enter-user-mode lsp<ret>' \
+  -docstring 'lsp commands'
+
+map -docstring "Rename identifier" global lsp R %{: lsp-rename-prompt<ret>}
+
+require-module prelude
+require-module connect
+require-module connect-fzf
+require-module connect-lf
+require-module auto-pairs
+require-module quickscope
+require-module rainbow
+
+require-module x11
+set global termcmd 'foot sh -c'

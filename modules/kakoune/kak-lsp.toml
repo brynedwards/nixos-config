@@ -1,0 +1,37 @@
+[language.c_cpp]
+filetypes = ["c", "cpp"]
+roots = [".ccls-root"]
+command = "ccls"
+args = ["--init={\"completion\":{\"detailedLabel\":false}}", "--log-file=/home/bryn/ccls.log"]
+
+[language.python]
+filetypes = ["python"]
+roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+command = "pyls"
+offset_encoding = "utf-8"
+
+[language.rust]
+filetypes = ["rust"]
+roots = ["Cargo.toml"]
+command = "rust-analyzer"
+
+[language.svelte]
+filetypes = ["svelte"]
+roots = ["package.json"]
+command = "svelteserver"
+args = ["--stdio"]
+
+[language.typescript]
+filetypes = ["typescript"]
+roots = ["package.json"]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+# [language.vue]
+# filetypes = ["vue"]
+# roots = ["package.json"]
+# command = "vls"
+# args = ["--stdio"]
+
+# [language.vue.initialization_options]
+# vetur.dev.logLevel = "INFO"

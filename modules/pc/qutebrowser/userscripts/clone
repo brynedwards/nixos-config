@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+awk_cmd='{n=split($3, a, "."); printf("%s.%s/%s/%s", a[n-1], a[n], $4, $5)}'
+outdir=$(awk -F/ "$awk_cmd" <<<"$QUTE_URL" | tr '[:upper:]' '[:lower:]')
+git clone "$QUTE_URL" $HOME/code/"$outdir"

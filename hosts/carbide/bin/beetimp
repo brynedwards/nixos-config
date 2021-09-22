@@ -1,0 +1,29 @@
+#!/bin/sh
+if [ -z "$1" ]; then
+  echo "Provide one or more zip files"
+  exit
+fi
+
+for f in "$@"
+do
+  tmpdir=$(ssh nuc.local 'mktemp -d')
+  ext="${f##*.}"
+  rsync "$f" nuc.local:$tmpdir
+  case "$ext" in
+    mp3)
+      ssh -t nuc.local \
+        "beet imp -s $tmpdir/\"$f\"; \
+        rm -r $tmpdir"
+      ;;
+    zip)
+      ssh -t nuc.local \
+        "mkdir $tmpdir/out; \
+        7z x -o$tmpdir/out $tmpdir/\"$f\"; \
+        beet imp $tmpdir/out; \
+        rm -r $tmpdir"
+      ;;
+    *)
+      unknown filetype "$ext"
+      exit
+  esac
+done

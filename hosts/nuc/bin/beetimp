@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+if [ -z "$1" ]; then
+	echo "Provide one or more URLs"
+	exit 1
+fi
+
+for url in "$@"
+do
+	tmpdir=$(mktemp -d)
+	cd $tmpdir
+	curl -LJO "$url"
+	filepath=$(fd --full-path $tmpdir/)
+	ext="${filepath##*.}"
+	case $ext in
+		mp3)
+			cp "$filepath" $HOME/Downloads/
+			beet imp -qs "$filepath"
+			rmdir $tmpdir
+			;;
+		zip)
+			7z x -o"$tmpdir/out" "$filepath"
+			beet imp "$tmpdir/out"
+			mv "$filepath" $HOME/Downloads/
+			rmdir "$tmpdir"
+		;;
+	esac
+done
+

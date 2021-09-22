@@ -1,0 +1,248 @@
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = []
+auto-format = true
+comment-token = "//"
+config = """
+{
+  "cargo": {
+    "loadOutDirsFromCheck": true
+  },
+  "procMacro": {
+    "enable": false
+  }
+}
+"""
+
+language-server = { command = "rust-analyzer" }
+indent = { tab-width = 2, unit = "\t" }
+
+[[language]]
+name = "toml"
+scope = "source.toml"
+injection-regex = "toml"
+file-types = ["toml"]
+roots = []
+comment-token = "#"
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "protobuf"
+scope = "source.proto"
+injection-regex = "protobuf"
+file-types = ["proto"]
+roots = []
+comment-token = "//"
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "elixir"
+scope = "source.elixir"
+injection-regex = "elixir"
+file-types = ["ex", "exs"]
+roots = []
+comment-token = "#"
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "json"
+scope = "source.json"
+injection-regex = "json"
+file-types = ["json"]
+roots = []
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "c"
+scope = "source.c"
+injection-regex = "c"
+file-types = ["c"] # TODO: ["h"]
+roots = []
+comment-token = "//"
+
+language-server = { command = "clangd" }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+injection-regex = "cpp"
+file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino"]
+roots = []
+comment-token = "//"
+
+language-server = { command = "clangd" }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "go"
+scope = "source.go"
+injection-regex = "go"
+file-types = ["go"]
+roots = ["Gopkg.toml", "go.mod"]
+auto-format = true
+comment-token = "//"
+
+language-server = { command = "gopls" }
+# TODO: gopls needs utf-8 offsets?
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "^(js|javascript)$"
+file-types = ["js", "mjs"]
+roots = []
+comment-token = "//"
+# TODO: highlights-jsx, highlights-params
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "^(ts|typescript)$"
+file-types = ["ts"]
+roots = []
+# TODO: highlights-jsx, highlights-params
+
+language-server = { command = "typescript-language-server", args = ["--stdio"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "css"
+scope = "source.css"
+injection-regex = "css"
+file-types = ["css"]
+roots = []
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = ["html"]
+roots = []
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py"]
+roots = []
+comment-token = "#"
+
+language-server = { command = "python-language-server" }
+# TODO: pyls needs utf-8 offsets
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "nix"
+scope = "source.nix"
+injection-regex = "nix"
+file-types = ["nix"]
+roots = []
+comment-token = "#"
+
+language-server = { command = "rnix-lsp" }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "ruby"
+scope = "source.ruby"
+injection-regex = "ruby"
+file-types = ["rb"]
+roots = []
+comment-token = "#"
+
+language-server = { command = "solargraph", args = ["stdio"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "bash"
+file-types = ["sh", "bash"]
+roots = []
+comment-token = "#"
+
+language-server = { command = "bash-language-server", args = ["start"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "php"
+scope = "source.php"
+injection-regex = "php"
+file-types = ["php"]
+roots = []
+
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "latex"
+scope = "source.tex"
+injection-regex = "tex"
+file-types = ["tex"]
+roots = []
+comment-token = "%"
+
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "julia"
+scope = "source.julia"
+injection-regex = "julia"
+file-types = ["jl"]
+roots = []
+comment-token = "#"
+language-server = { command = "julia", args = [ "--startup-file=no", "--history-file=no", "-e", "using LanguageServer;using Pkg;import StaticLint;import SymbolServer;env_path = dirname(Pkg.Types.Context().env.project_file);server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, \"\");server.runlinter = true;run(server);" ] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "java"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java"]
+roots = []
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "ledger"
+scope = "source.ledger"
+injection-regex = "ledger"
+file-types = ["ldg", "ledger", "journal"]
+roots = []
+comment-token = ";"
+indent = { tab-width = 4, unit = "    " }
+
+# [[language]]
+# name = "haskell"
+# scope = "source.haskell"
+# injection-regex = "haskell"
+# file-types = ["hs"]
+# roots = []
+# comment-token = "--"
+#
+# indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "zig"
+scope = "source.zig"
+injection-regex = "zig"
+file-types = ["zig"]
+roots = ["build.zig"]
+auto-format = true
+comment-token = "//"
+
+language-server = { command = "zls" }
+indent = { tab-width = 4, unit = "    " }

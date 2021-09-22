@@ -1,0 +1,4 @@
+theme = "bryn"
+
+[editor]
+line-number = "relative"
