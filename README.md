@@ -1,8 +1,8 @@
 NixOS config for three computers:
 
 1. Two PCs
-  1. Desktop (carbide)
-  2. laptop (aura)
+   1. Desktop (carbide)
+   2. laptop (aura)
 2. One Server (nuc)
 
 The config uses nix flakes and expects a flake-enabled nix i.e. `nix-shell -p nixFlakes`.
