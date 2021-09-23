@@ -168,7 +168,6 @@ in {
         hide_edge_borders --i3 smart
         exec systemctl --user start graphical-session.target
         # TODO make these services
-        exec ${pkgs.foot}/bin/foot -s
         exec_always "pkill swayfade; ${swayfade}/bin/swayfade"
         exec_always ${pkgs.mako}/bin/mako
         exec swayidle -w \
