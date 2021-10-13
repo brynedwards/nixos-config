@@ -50,7 +50,7 @@
     file
     foot
     git
-    gitAndTools.tig
+    gitui
     git-crypt
     gnumake
     highlight
