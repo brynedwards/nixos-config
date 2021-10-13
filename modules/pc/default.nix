@@ -40,10 +40,12 @@ in {
     entr
     feh
     ffmpeg
+    google-chrome
     irssi
     julius
     kid3
     libnotify
+    libreoffice
     (mpv-with-scripts.override { scripts = [ pkgs.mpvScripts.mpris ]; })
     (callPackage ../../packages/nb.nix { })
     (ncpamixer.overrideAttrs (oldAttrs: {

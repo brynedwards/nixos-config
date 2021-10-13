@@ -48,10 +48,8 @@ in {
     cm-rgb
     discord
     gnome3.gnome-tweaks
-    google-chrome
     inkscape
     jellyfin-media-player
-    libreoffice
     qbittorrent
     qjackctl
     rpcs3
