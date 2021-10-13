@@ -43,7 +43,6 @@
   services.earlyoom.freeMemThreshold = 5;
 
   environment.systemPackages = with pkgs; [
-    any-nix-shell
     bat
     bottom
     curl

@@ -3,8 +3,9 @@
     enable = true;
     enableAutosuggestions = true;
     dotDir = ".config/zsh";
+    shellAliases.rm = "echo \"use trash-put instead, or prefix with backslash.\"; false";
     initExtra = ''
-      any-nix-shell zsh --info-right | source /dev/stdin
+      ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -es "^[e" ' kak\n'
       bindkey -es "^[o" ' lfcd\n'
       bindkey -es "^[z" ' zi\n'
