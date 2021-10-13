@@ -12,6 +12,7 @@ in {
       "127.0.0.1" = [ "aura.local" ];
       "192.168.1.9" = [ "nuc.local" ];
     };
+    resolvconf.extraConfig = "name_servers=1.1.1.1";
     wireless = {
       enable = true;
       interfaces = [ "wlo1" ];
