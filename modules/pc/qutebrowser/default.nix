@@ -71,6 +71,7 @@
       '';
     };
     xdg.configFile."qutebrowser/redirectors.py".source = ./config/redirectors.py;
-    xdg.dataFile."qutebrowser/userscripts".source = ./userscripts;
+    xdg.dataFile."qutebrowser/userscripts/bandcamp-download".source = ./userscripts/bandcamp-download;
+    xdg.dataFile."qutebrowser/userscripts/clone".source = ./userscripts/clone;
   };
 }
