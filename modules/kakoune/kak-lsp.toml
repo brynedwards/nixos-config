@@ -7,7 +7,7 @@ args = ["--init={\"completion\":{\"detailedLabel\":false}}", "--log-file=/home/b
 [language.python]
 filetypes = ["python"]
 roots = ["requirements.txt", "setup.py", ".git", ".hg"]
-command = "pyls"
+command = "pylsp"
 offset_encoding = "utf-8"
 
 [language.rust]
