@@ -60,6 +60,7 @@ in {
     pamixer
     nodePackages.node2nix
     nodePackages.peerflix
+    pinentry-curses
     pgformatter
     playerctl
     (callPackage ../../packages/potato.nix { })
@@ -83,8 +84,8 @@ in {
     skypeforlinux
     socat # required for qutebrowser script
     termdown
+    tomb
     tree-sitter
-    (callPackage ../../packages/chromium.nix { })
     zathura
     zoom-us
   ];
@@ -109,6 +110,11 @@ in {
       extraConfig.thread_view.preferred_type = "html";
     };
     browserpass.enable = true;
+    chromium = {
+      enable = true;
+      package = (pkgs.callPackage ../../packages/chromium.nix { });
+      extensions = [ "naepdomgkenhinolocfifgehidddafch" ];
+    };
     firefox = {
       enable = true;
       package =
