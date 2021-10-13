@@ -15,7 +15,7 @@ in {
       output.eDP-1.background = "/etc/nixos/assets/beach-blurred.jpg fill";
     };
     wayland.windowManager.sway.extraConfig = ''
-      exec_always ${pkgs.batsignal}/bin/batsignal
+      exec_always pkill batsignal; ${pkgs.batsignal}/bin/batsignal
     '';
     programs.waybar = {
       settings = [waybarSettings];
