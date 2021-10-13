@@ -141,6 +141,7 @@ in {
           "${modifier}+Shift+k" = "move up";
           "${modifier}+Shift+l" = "move right";
           "${modifier}+Shift+Return" = "exec term-float";
+          "${modifier}+z" = "exec footclient -D $(zoxide query -l | sed \"s|\${HOME}/||\" | fuzzel -d)";
         };
         modifier = "Mod4";
         modes = {
