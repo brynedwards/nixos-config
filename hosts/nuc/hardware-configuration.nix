@@ -23,6 +23,11 @@
       fsType = "vfat";
     };
 
+  fileSystems."/mnt/media" =
+    { device = "/dev/disk/by-partuuid/32f7e42e-b71e-4076-aeda-b9599f5ab345";
+      fsType = "ext4";
+    };
+
   swapDevices = [ ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
