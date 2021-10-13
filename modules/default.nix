@@ -16,11 +16,18 @@
   environment.sessionVariables = {
     EDITOR = "kak";
     LESS = "-R";
-    LESSOPEN = "|highlight -O ansi --force %s";
     MANPAGER = "less";
     PATH = "$HOME/.local/bin:$PATH";
     XCURSOR_SIZE = "48";
   };
+
+  programs.less = {
+    enable = true;
+    envVariables.LESS = "-R";
+    lessopen = ''
+      | p() { ${pkgs.chroma}/bin/chroma --fail \"\$1\" || cat \"\$1\"; }; p \"%s\"'';
+  };
+
   users.defaultUserShell = pkgs.zsh;
   users.users.bryn = {
     isNormalUser = true;
