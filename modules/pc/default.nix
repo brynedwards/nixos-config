@@ -188,6 +188,12 @@ in {
     configFile."tridactyl/tridactylrc".source = ./tridactylrc;
     dataFile."jellyfinmediaplayer/scripts/mpris.so".source =
       "${pkgs.mpvScripts.mpris}/share/mpv/scripts/mpris.so";
+    desktopEntries.ncpamixer = {
+      name = "ncpamixer";
+      genericName = "Volume control";
+      exec = "ncpamixer -t o";
+      terminal = true;
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
