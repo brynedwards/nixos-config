@@ -95,7 +95,40 @@
       password-store.enable = true;
       starship = {
         enable = true;
-        settings.aws.disabled = true;
+        package = pkgs.starship.overrideAttrs (oldAttrs: rec {
+          patches = [ ../packages/starship-altjobs.patch ];
+          doCheck = false;
+        });
+        settings = let format = "[┃ $symbol($version)]($style) ";
+        in {
+          aws.disabled = true;
+          custom.djangodb = {
+            command = "printf %s \${DBNAME:-selectapp} ";
+            directories = [ "selectproject" ];
+            format = ''
+
+              [$symbol ($output)]($style)'';
+            symbol = "";
+          };
+          directory = {
+            truncation_length = 8;
+            truncate_to_repo = false;
+          };
+          git_branch.format = "[┃ $symbol$branch]($style) ";
+          git_status = {
+            format = "([$all_status$ahead_behind]($style)) ";
+            style = "bold #ff57dd";
+          };
+          jobs = {
+            format = "[$symbol( \${number}x)]($style) ";
+            symbol = "🏃";
+          };
+          nix_shell.format = "[┃ $symbol]($style) ";
+          nodejs.format = format;
+          python.format = format;
+          rust.format = format;
+          rust.version_format = "$major.$minor.$patch";
+        };
       };
       zoxide.enable = true;
       lf = {
