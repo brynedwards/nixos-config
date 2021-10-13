@@ -37,11 +37,6 @@
                 rust-overlay.overlay
                 agenix.overlay
                 nur.overlay
-                (self: super: {
-                  nixUnstable = super.nixUnstable.override {
-                    patches = [ ./unset-is-macho.patch ];
-                  };
-                })
               ];
             }
             agenix.nixosModules.age
