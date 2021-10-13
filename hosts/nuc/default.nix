@@ -21,6 +21,7 @@
 
   networking = {
     firewall.enable = true;
+    firewall.allowedTCPPorts = [ 4533 ];  # navidrome
     hostName = "nuc";
   };
 
@@ -35,6 +36,15 @@
     jellyfin = {
       enable = true;
       openFirewall = true;
+    };
+
+    navidrome = {
+      enable = true;
+      settings = {
+        Address = "192.168.1.9";
+        BaseUrl = "/navidrome";
+        MusicFolder = "/mnt/media/media/music";
+      };
     };
 
     openssh = {
