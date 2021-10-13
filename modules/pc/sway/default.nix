@@ -29,7 +29,9 @@ in {
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       dconf
+      grim
       imv
+      slurp
       swayidle
       swaylock
       wl-clipboard
