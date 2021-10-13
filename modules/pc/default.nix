@@ -3,8 +3,8 @@
 # -----------------------------------------------
 { config, pkgs, ... }:
 let
-passfst = pkgs.callPackage ./scripts/passfst.nix {};
-secrets = import ../../secrets;
+  passfst = pkgs.callPackage ./scripts/passfst.nix { };
+  secrets = import ../../secrets;
 in {
   imports = [ ./qutebrowser ./scripts ./sway ./tmux.nix ./x.nix ];
 
@@ -100,7 +100,8 @@ in {
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" "Liberation Mono" ];
   fonts.fontconfig.defaultFonts.sansSerif = [ "Roboto" "Liberation Sans" ];
 
-  home-manager.users.bryn.accounts.email.accounts = secrets.email { inherit passfst; };
+  home-manager.users.bryn.accounts.email.accounts =
+    secrets.email { inherit passfst; };
   home-manager.users.bryn.gtk.enable = true;
   home-manager.users.bryn.programs = {
     astroid = {
@@ -145,9 +146,7 @@ in {
       enable = true;
       server.enable = true;
       settings = {
-        main = {
-          dpi-aware = "yes";
-        };
+        main = { dpi-aware = "yes"; };
         colors = {
           foreground = "d8d8d8";
           background = "000000";
