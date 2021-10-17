@@ -74,7 +74,7 @@
     unzip
     usbutils
     xmlformat
-    youtube-dl
+    yt-dlp
   ];
 
   home-manager = {
