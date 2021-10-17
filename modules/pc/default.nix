@@ -46,7 +46,10 @@ in {
     kid3
     libnotify
     libreoffice
-    (mpv-with-scripts.override { scripts = [ pkgs.mpvScripts.mpris ]; })
+    (mpv-with-scripts.override {
+      scripts = with pkgs.mpvScripts; [ mpris youtube-quality ];
+      youtubeSupport = false;  # Use yt-dlp instead; see mpv/script-opts/ytdl_hook.conf
+    })
     (callPackage ../../packages/nb.nix { })
     (ncpamixer.overrideAttrs (oldAttrs: {
       src = fetchFromGitHub {
