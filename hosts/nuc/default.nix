@@ -41,7 +41,7 @@
     navidrome = {
       enable = true;
       settings = {
-        Address = "192.168.1.9";
+        Address = "0.0.0.0";
         BaseUrl = "/navidrome";
         MusicFolder = "/mnt/media/media/music";
       };
