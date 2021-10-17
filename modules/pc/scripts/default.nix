@@ -1,8 +1,9 @@
 { pkgs, ... }:
 let
+  fuzzelPkg = pkgs.callPackage ../../../packages/fuzzel.nix {};
   myFuzzel = (pkgs.writeScriptBin "fuzzel" ''
     #!${pkgs.stdenv.shell}
-    ${pkgs.fuzzel}/bin/fuzzel -T footclient -I -f 'sans:size='"''${FUZZEL_FONT_SIZE:-24}" -b '000000f0' -t 'fda300ff' -m 'ffffffff' -s '1c458eff' $@ <&0
+    ${fuzzelPkg}/bin/fuzzel -T footclient -I -f 'sans:size='"''${FUZZEL_FONT_SIZE:-24}" -b '000000f0' -t 'fda300ff' -m 'ffffffff' -s '1c458eff' $@ <&0
   '');
 in {
   environment.systemPackages = with pkgs; [
