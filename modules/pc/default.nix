@@ -198,6 +198,7 @@ in {
     configFile."tridactyl/tridactylrc".source = ./tridactylrc;
     dataFile."jellyfinmediaplayer/scripts/mpris.so".source =
       "${pkgs.mpvScripts.mpris}/share/mpv/scripts/mpris.so";
+    configFile."zathura/zathurarc".source = ./zathurarc;
     desktopEntries.ncpamixer = {
       name = "ncpamixer";
       genericName = "Volume control";
