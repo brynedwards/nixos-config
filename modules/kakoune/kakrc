@@ -43,5 +43,5 @@ require-module auto-pairs
 require-module quickscope
 require-module rainbow
 
-require-module x11
-set global termcmd 'foot sh -c'
+require-module wayland
+set global termcmd 'footclient sh -c'
