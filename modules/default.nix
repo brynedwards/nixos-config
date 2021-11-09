@@ -25,7 +25,7 @@
     enable = true;
     envVariables.LESS = "-R";
     lessopen = ''
-      | p() { ${pkgs.chroma}/bin/chroma --fail \"\$1\" || cat \"\$1\"; }; p \"%s\"'';
+      | p() { ${pkgs.chroma}/bin/chroma --formatter=\"terminal16m\" --style=\"fruity\" --fail \"\$1\" || cat \"\$1\"; }; p \"%s\"'';
   };
 
   users.defaultUserShell = pkgs.zsh;
