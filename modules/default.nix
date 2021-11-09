@@ -142,7 +142,7 @@
     users.bryn.xdg.configFile = {
       "helix/themes".source = ./helix/themes;
       "helix/config.toml".source = ./helix/config.toml;
-      "helix/languages.toml.toml".source = ./helix/languages.toml;
+      "helix/languages.toml".source = ./helix/languages.toml;
     };
   };
 
