@@ -7,7 +7,9 @@
     layout = "ie";
     xkbOptions = "ctrl:swapcaps";
     displayManager.startx.enable = true;
-    desktopManager.xfce.enable = true;
+    libinput.enable = true;
+    libinput.touchpad.naturalScrolling = true;
+    windowManager.openbox.enable = true;
   };
   home-manager.users.bryn = {
     xsession.pointerCursor = {
@@ -15,12 +17,17 @@
       defaultCursor = "left_ptr";
       name = "Bibata_Amber";
     };
+    xdg.configFile = {
+      "openbox".source = ./openbox;
+    };
   };
 
   environment.systemPackages = with pkgs; [
+    alacritty
+    bemenu
     pinta
     sxiv
-    pinta
+    tint2
     wxcam
     xorg.xdpyinfo
     xorg.xrandr
