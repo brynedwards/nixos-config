@@ -202,7 +202,5 @@ in {
   };
 
   nixpkgs.config.allowUnfree = true;
-  virtualisation.docker.enable = true;
-  users.users.bryn.extraGroups = [ "docker" ];
   age.sshKeyPaths = [ /home/bryn/.ssh/id_ed25519 ];
 }
