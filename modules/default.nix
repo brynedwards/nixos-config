@@ -55,9 +55,9 @@
     gnumake
     highlight
     htop
+    joshuto
     jq
     ldns
-    lf
     lsof
     ncdu
     neofetch

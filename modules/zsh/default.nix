@@ -7,7 +7,8 @@
     initExtra = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -es "^[e" ' kak\n'
-      bindkey -es "^[o" ' lfcd\n'
+      bindkey -es "^[o" ' jcd\n'
+      bindkey -es "^[O" ' lfcd\n'
       bindkey -es "^[z" ' zi\n'
       if [ "$(tty)" = "/dev/tty1" ]; then
       	XCURSOR_SIZE=48 exec dbus-run-session sway
@@ -37,9 +38,9 @@
     localVariables.WORDCHARS = "*?[]~&;!$%^(){}<>";
     plugins = [
       {
-        name = "lfcd";
+        name = "custom";
         file = "init.zsh";
-        src = ./lfcd;
+        src = ./custom;
       }
       {
         name = "zsh-completions";
@@ -81,4 +82,3 @@
   };
   environment.pathsToLink = [ "/share/zsh" ];
 }
-
