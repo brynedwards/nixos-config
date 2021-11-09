@@ -11,7 +11,7 @@
       bindkey -es "^[E" ' kak\n'
       bindkey -es "^[g" ' gitui\n'
       bindkey -es "^[o" ' jcd\n'
-      bindkey -es "^[O" ' lfcd\n'
+      bindkey -es "^[p" ' lfcd\n'
       bindkey -es "^[z" ' zi\n'
       if [ "$(tty)" = "/dev/tty1" ]; then
       	XCURSOR_SIZE=48 exec dbus-run-session sway
