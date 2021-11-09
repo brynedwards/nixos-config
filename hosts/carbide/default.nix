@@ -49,7 +49,6 @@ in {
     discord
     gnome3.gnome-tweaks
     inkscape
-    jellyfin-media-player
     qbittorrent
     qjackctl
     rpcs3

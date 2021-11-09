@@ -196,8 +196,6 @@ in {
     configFile."mpv/input.conf".source = ./mpv/input.conf;
     configFile."mpv/scripts-opts/ytdl_hook.conf".source = ./mpv/script-opts/ytdl_hook.conf;
     configFile."tridactyl/tridactylrc".source = ./tridactylrc;
-    dataFile."jellyfinmediaplayer/scripts/mpris.so".source =
-      "${pkgs.mpvScripts.mpris}/share/mpv/scripts/mpris.so";
     configFile."zathura/zathurarc".source = ./zathurarc;
     desktopEntries.ncpamixer = {
       name = "ncpamixer";

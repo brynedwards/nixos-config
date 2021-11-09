@@ -33,11 +33,6 @@
       workstation = true;
     };
 
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
-
     navidrome = {
       enable = true;
       settings = {
