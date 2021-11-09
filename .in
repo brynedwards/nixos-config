@@ -1,0 +1,16 @@
+check() {
+	nix flake check
+}
+
+rebuild() {
+	sudo nixos-rebuild test --impure
+}
+
+update() {
+	sudo nixos-rebuild test --impure --recreate-lock-file
+}
+
+save() {
+	sudo nixos-rebuild switch --impure
+	nix registry add nixpkgs github:NixOS/nixpkgs/$(nix flake metadata --json | jq -r .locks.nodes.nixpkgs.locked.rev)
+}
