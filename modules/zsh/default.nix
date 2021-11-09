@@ -7,7 +7,9 @@
     shellAliases.wlsunset = "echo \"use the systemd user service.\"; false";
     initExtra = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
-      bindkey -es "^[e" ' kak\n'
+      bindkey -es "^[e" ' hx\n'
+      bindkey -es "^[E" ' kak\n'
+      bindkey -es "^[g" ' gitui\n'
       bindkey -es "^[o" ' jcd\n'
       bindkey -es "^[O" ' lfcd\n'
       bindkey -es "^[z" ' zi\n'

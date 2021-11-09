@@ -14,7 +14,7 @@
 
   environment.shells = [ pkgs.zsh ];
   environment.sessionVariables = {
-    EDITOR = "kak";
+    EDITOR = "hx";
     LESS = "-R";
     MANPAGER = "less";
     PATH = "$HOME/.local/bin:$PATH";
