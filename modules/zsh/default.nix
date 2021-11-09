@@ -4,6 +4,7 @@
     enableAutosuggestions = true;
     dotDir = ".config/zsh";
     shellAliases.rm = "echo \"use trash-put instead, or prefix with backslash.\"; false";
+    shellAliases.wlsunset = "echo \"use the systemd user service.\"; false";
     initExtra = ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell zsh --info-right | source /dev/stdin
       bindkey -es "^[e" ' kak\n'
