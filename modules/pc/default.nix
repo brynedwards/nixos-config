@@ -193,7 +193,8 @@ in {
   };
   home-manager.users.bryn.xdg = {
     configFile."gitui".source = ./gitui;
-    configFile."mpv".source = ./mpv;
+    configFile."mpv/input.conf".source = ./mpv/input.conf;
+    configFile."mpv/scripts-opts/ytdl_hook.conf".source = ./mpv/script-opts/ytdl_hook.conf;
     configFile."tridactyl/tridactylrc".source = ./tridactylrc;
     dataFile."jellyfinmediaplayer/scripts/mpris.so".source =
       "${pkgs.mpvScripts.mpris}/share/mpv/scripts/mpris.so";
