@@ -103,11 +103,11 @@
         in {
           aws.disabled = true;
           custom.djangodb = {
-            command = "printf %s \${DBNAME:-selectapp} ";
+            command = "printf '%s' \${DBNAME}";
             directories = [ "selectproject" ];
             format = ''
 
-              [$symbol ($output)]($style)'';
+              [$symbol ($output)]($style) '';
             symbol = "";
           };
           directory = {
