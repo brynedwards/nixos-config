@@ -40,6 +40,8 @@ in {
     entr
     feh
     ffmpeg
+    gcc
+    gdb
     # Provides 'gio' command which joshuto uses for trash
     glib
     google-chrome
