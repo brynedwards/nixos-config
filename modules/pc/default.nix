@@ -34,6 +34,7 @@ in {
     agenix
     augustus
     brightnessctl
+    cargo-edit
     cmus
     dunst
     (callPackage ../../packages/element-desktop.nix { })
