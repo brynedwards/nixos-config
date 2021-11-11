@@ -196,6 +196,7 @@ in {
     configFile."gitui".source = ./gitui;
     configFile."mpv/input.conf".source = ./mpv/input.conf;
     configFile."mpv/scripts-opts/ytdl_hook.conf".source = ./mpv/script-opts/ytdl_hook.conf;
+    configFile."rustfmt/rustfmt.toml".source = ./rustfmt.toml;
     configFile."tridactyl/tridactylrc".source = ./tridactylrc;
     configFile."zathura/zathurarc".source = ./zathurarc;
     desktopEntries.ncpamixer = {
